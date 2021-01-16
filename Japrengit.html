@@ -1,0 +1,36 @@
+/ Config le git /
+git config --global user.name "VOTRE_NOM"
+git config --global user.email "VOTRE_EMAIL"
+
+/ Initialiser git /
+git init
+git status
+untracked Le fichier existe sur le disque mais ne fait pas partie du dépôt.
+unmoddified / fichier existe sur dd et dépôt et non modifié sur le dd, git status ignore ce fichier
+Modified fichier existe sur dd et dépôt et modifié
+Staged fichier diff par rapport au dépôt, modifié, ajouté ou supp, user l'a ajouté au staging area
+dans ce cas les modif au prochain commit
+
+/ commandes pr gérer l'état d'un fichier /
+git add <fichier/répertoire> pr ajouter le fichier à la staging area si nv ou modif
+git add . pr ajouter ts les files modif à stag area
+git add -A . pareil + fichiers créés
+git rm pour aj à stag area + supp / staged >supp du rep de travail
+git reset -- <fichier/répertoire> retirer un file de staging area
+git checkout <fichier/répertoire> cancel modif local file, file doit pas être dans la staging area
+git reset pour la sortir, le checkout annules les modifs et suppressions
+git diff <fichier/répertoire> pr voir diff / modif locales et dépôt local
+git diff --staged <fichier/répertoire> voir les diff entre staging area et dépôt local
+
+/ valider les modifs / 
+git commit -m "un message explicatif" le m permet de mettre un msg entre ""
+git log pour voir l'historique des op de commit
+
+/ utilisation d'un dépôt distant /
+git remote -v   pr  connaître la liste des dépôts distants associés à mo, dépôt local
+Pour associer un dépôt distant à votre dépôt local, vous utilisez la commande :
+git remote add <nom du dépôt> <URL du dépôt>
+   git pull <nom du dépôt> master pour récup les modifs dépôt distant
+
+git push <nom du dépôt> master pr envoyer modif locales au distant
+    
